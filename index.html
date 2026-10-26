@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapacitaRH | Gestão de Treinamentos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">Capacita<span>RH</span></a>
+
+            <button class="header__toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <span class="header__toggle-bar"></span>
+                <span class="header__toggle-bar"></span>
+                <span class="header__toggle-bar"></span>
+            </button>
+
+            <nav class="header__nav" id="menu">
+                <ul class="header__list">
+                    <li><a href="#funcionalidades" class="header__link">Funcionalidades</a></li>
+                    <li><a href="#para-quem" class="header__link">Para quem</a></li>
+                    <li><a href="login.html" class="btn btn--primary">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__container">
+                <div class="hero__texto">
+                    <h1 class="hero__titulo">Os treinamentos da sua empresa, da inscrição ao certificado.</h1>
+                    <p class="hero__subtitulo">O CapacitaRH registra as capacitações, acompanha quem participou e guarda as certificações de cada funcionário em um só lugar.</p>
+                    <a href="login.html" class="btn btn--claro">Acessar o sistema</a>
+                </div>
+                
+                <ol class="trilha" aria-label="Etapas de uma capacitação">
+                    <li class="trilha__etapa">
+                        <strong class="trilha__nome">Inscrição</strong>
+                        <span class="trilha__texto">O gestor aprova a participação do funcionário.</span>
+                    </li>
+                    <li class="trilha__etapa">
+                        <strong class="trilha__nome">Treinamento</strong>
+                        <span class="trilha__texto">O instrutor registra a presença e o desempenho.</span>
+                    </li>
+                    <li class="trilha__etapa">
+                        <strong class="trilha__nome">Certificado</strong>
+                        <span class="trilha__texto">A certificação fica salva no histórico.</span>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="secao" id="funcionalidades">
+            <div class="secao__container">
+                <h2 class="secao__titulo">Funcionalidades</h2>
+                <p class="secao__descricao">Tudo o que o RH precisa para planejar e comprovar a capacitação da equipe.</p>
+
+                <div class="cards">
+                    <article class="card">
+                        <h3 class="card__titulo">Treinamentos</h3>
+                        <p class="card__texto">Cadastre cursos, datas e instrutores e acompanhe as inscrições.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card__titulo">Certificações</h3>
+                        <p class="card__texto">Guarde os certificados de cada funcionário e consulte quando quiser.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card__titulo">Objetivos</h3>
+                        <p class="card__texto">Defina metas de aprendizado por área e veja quem já as cumpriu.</p>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__titulo">Indicadores</h3>
+                        <p class="card__texto">Acompanhe horas de treinamento, participação e aproveitamento.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao secao--branca" id="para-quem">
+            <div class="secao__container">
+                <h2 class="secao__titulo">Para quem é o sistema</h2>
+                <p class="secao__descricao">Cada pessoa da empresa usa o CapacitaRH de um jeito.</p>
+
+                <ul class="publico">
+                    <li class="publico__item">
+                        <h3 class="publico__nome">Funcionário</h3>
+                        <p class="publico__papel">Participa dos treinamentos e acompanha as próprias certificações.</p>
+                    </li>
+                    <li class="publico__item">
+                        <h3 class="publico__nome">Gestor direto</h3>
+                        <p class="publico__papel">Aprova as inscrições da equipe e acompanha as metas.</p>
+                    </li>
+                    <li class="publico__item">
+                        <h3 class="publico__nome">RH</h3>
+                        <p class="publico__papel">Organiza as trilhas de capacitação e analisa os indicadores.</p>
+                    </li>
+                    <li class="publico__item">
+                        <h3 class="publico__nome">Instrutor</h3>
+                        <p class="publico__papel">Ministra os treinamentos e registra o desempenho da turma.</p>
+                    </li>
+                    <li class="publico__item">
+                        <h3 class="publico__nome">Administrador</h3>
+                        <p class="publico__papel">Controla os usuários e os cadastros do sistema.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy; <span id="ano">2026</span> CapacitaRH. Projeto da disciplina de Front-End.</p>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

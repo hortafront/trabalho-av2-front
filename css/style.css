@@ -1,0 +1,488 @@
+/* =========================================
+   CapacitaRH - Tela Inicial (index.css)
+   ========================================= */
+
+/* 1. VARIÁVEIS (identidade visual) */
+:root {
+  --cor-primaria: #6C3CE1;
+  --cor-primaria-escura: #5528C4;
+  --cor-primaria-clara: #EEE8FD;
+  --cor-sucesso: #22C55E;
+  --cor-perigo: #EF4444;
+  --cor-fundo: #F5F6FA;
+  --cor-texto: #1F2937;
+  --cor-texto-suave: #6B7280;
+  --cor-borda: #E5E7EB;
+  --cor-branca: #FFFFFF;
+
+  --fonte: 'Poppins', sans-serif;
+  --raio-botao: 8px;
+  --raio-card: 12px;
+  --sombra: 0 4px 16px rgba(31, 41, 55, 0.08);
+  --sombra-forte: 0 12px 28px rgba(108, 60, 225, 0.20);
+  --transicao: 0.25s ease;
+}
+
+/* 2. RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* 3. BOTÕES */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--raio-botao);
+  font-weight: 600;
+  transition: background-color var(--transicao), transform var(--transicao), box-shadow var(--transicao);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn--primary {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+}
+
+.btn--primary:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+.btn--claro {
+  background-color: var(--cor-branca);
+  color: var(--cor-primaria);
+}
+
+.btn--claro:hover {
+  background-color: var(--cor-primaria-clara);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+}
+
+/* Contorno visível ao navegar pelo teclado (Tab) */
+:focus-visible {
+  outline: 3px solid var(--cor-primaria);
+  outline-offset: 3px;
+}
+
+/* 4. CABEÇALHO */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--cor-branca);
+  box-shadow: var(--sombra);
+}
+
+.header__container {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.header__logo span {
+  color: var(--cor-primaria);
+}
+
+.header__toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  background: none;
+  border: none;
+  border-radius: var(--raio-botao);
+  cursor: pointer;
+  transition: background-color var(--transicao);
+}
+
+.header__toggle:hover {
+  background-color: var(--cor-primaria-clara);
+}
+
+.header__toggle-bar {
+  width: 24px;
+  height: 3px;
+  background-color: var(--cor-texto);
+  border-radius: 2px;
+}
+
+/* No celular o menu fica escondido (altura 0) */
+.header__nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--cor-branca);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+/* Classe colocada pelo JavaScript para abrir o menu */
+.header__nav--aberto {
+  max-height: 300px;
+  box-shadow: var(--sombra);
+}
+
+.header__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 16px;
+}
+
+.header__link {
+  position: relative;
+  display: inline-block;
+  padding: 8px 0;
+  font-weight: 500;
+  transition: color var(--transicao);
+}
+
+/* Linha embaixo do link, começa "encolhida" */
+.header__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cor-primaria);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transicao);
+}
+
+.header__link:hover {
+  color: var(--cor-primaria);
+}
+
+.header__link:hover::after {
+  transform: scaleX(1);
+}
+
+/* 5. HERO */
+.hero {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: 56px 16px;
+}
+
+.hero__container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  gap: 48px;
+}
+
+.hero__texto {
+  animation: surgir 0.7s ease both;
+}
+
+.hero__titulo {
+  font-size: 1.9rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero__subtitulo {
+  max-width: 34em;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+.hero :focus-visible {
+  outline-color: var(--cor-branca);
+}
+
+/* Trilha: as 3 etapas de uma capacitação */
+.trilha {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-left: 56px;
+  counter-reset: etapa;
+}
+
+.trilha__etapa {
+  position: relative;
+  counter-increment: etapa;
+  padding: 16px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--raio-card);
+  transition: background-color var(--transicao);
+}
+
+.trilha__etapa:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Círculo com o número da etapa (1, 2, 3) */
+.trilha__etapa::before {
+  content: counter(etapa);
+  position: absolute;
+  left: -56px;
+  top: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--cor-branca);
+  color: var(--cor-primaria);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transicao);
+}
+
+.trilha__etapa:hover::before {
+  transform: scale(1.15);
+}
+
+/* Linha que liga um círculo ao próximo (a última etapa não tem) */
+.trilha__etapa:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: -37px;
+  top: 56px;
+  bottom: -40px;
+  width: 2px;
+  background-color: var(--cor-branca);
+  transform-origin: top;
+  animation: preencher 0.6s ease 0.6s both;
+}
+
+.trilha__etapa:nth-child(2)::after {
+  animation-delay: 1.2s;
+}
+
+.trilha__nome {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.trilha__texto {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* 6. SEÇÕES */
+.secao {
+  padding: 64px 16px;
+  scroll-margin-top: 72px;
+}
+
+.secao--branca {
+  background-color: var(--cor-branca);
+}
+
+.secao__container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.secao__titulo {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.secao__descricao {
+  max-width: 40em;
+  margin-bottom: 32px;
+  color: var(--cor-texto-suave);
+}
+
+/* 7. CARDS (Funcionalidades) */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  padding: 24px;
+  background-color: var(--cor-branca);
+  border-top: 4px solid var(--cor-primaria);
+  border-radius: var(--raio-card);
+  box-shadow: var(--sombra);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-forte);
+}
+
+.card__titulo {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  transition: color var(--transicao);
+}
+
+.card:hover .card__titulo {
+  color: var(--cor-primaria);
+}
+
+.card__texto {
+  font-size: 0.95rem;
+  color: var(--cor-texto-suave);
+}
+
+/* 8. PARA QUEM (lista de atores) */
+.publico {
+  border-top: 1px solid var(--cor-borda);
+}
+
+.publico__item {
+  display: grid;
+  gap: 4px;
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--cor-borda);
+  border-left: 4px solid transparent;
+  transition: background-color var(--transicao), border-color var(--transicao);
+}
+
+.publico__item:hover {
+  background-color: var(--cor-primaria-clara);
+  border-left-color: var(--cor-primaria);
+}
+
+.publico__nome {
+  font-size: 1.05rem;
+}
+
+.publico__papel {
+  color: var(--cor-texto-suave);
+}
+
+/* 9. RODAPÉ */
+.footer {
+  padding: 24px 16px;
+  background-color: var(--cor-texto);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* 10. ANIMAÇÕES */
+@keyframes surgir {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes preencher {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* 11. RESPONSIVIDADE (mobile-first) */
+
+/* Tablet: a partir de 768px */
+@media (min-width: 768px) {
+  .header__toggle {
+    display: none;
+  }
+
+  .header__nav {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .header__list {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    padding: 0;
+  }
+
+  .hero {
+    padding: 80px 24px;
+  }
+
+  .hero__titulo {
+    font-size: 2.5rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .publico__item {
+    grid-template-columns: 220px 1fr;
+    align-items: center;
+  }
+}
+
+/* Desktop: a partir de 1024px */
+@media (min-width: 1024px) {
+  .hero__container {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+  }
+
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Quem pediu menos movimento no sistema operacional */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
