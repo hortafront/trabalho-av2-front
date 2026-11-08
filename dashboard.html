@@ -1,15 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tela Principal | CapacitaRH</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Principal | CapacitaRH</title>
+
+    <!-- Proteção: sem login, volta para o login antes de mostrar a página -->
+    <script src="js/sessao.js"></script>
+
+    <!-- Fonte Poppins (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS próprio desta página -->
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-  <main>
-    <h1>Tela Principal</h1>
-    <p>Esta tela será construída na Sprint 3.</p>
-    <a href="login.html">Voltar ao login</a>
-  </main>
+    <!-- MENU LATERAL -->
+    <aside class="menu" id="menu">
+        <a href="dashboard.html" class="menu__logo">Capacita<span>RH</span></a>
+
+        <nav aria-label="Menu principal">
+            <ul class="menu__lista">
+                <li><a href="dashboard.html" class="menu__link menu__link--ativo" aria-current="page">Início</a></li>
+                <li><a href="usuarios.html" class="menu__link">Usuários</a></li>
+                <li><a href="cadastro1.html" class="menu__link">Cadastro 1</a></li>
+                <li><a href="cadastro2.html" class="menu__link">Cadastro 2</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- ÁREA DA DIREITA: barra do topo e conteúdo -->
+    <div class="pagina">
+        <header class="topo">
+            <button class="topo__toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <span class="topo__toggle-barra"></span>
+                <span class="topo__toggle-barra"></span>
+                <span class="topo__toggle-barra"></span>
+            </button>
+
+            <p class="topo__ola">Olá, <strong id="nome-usuario">usuário</strong></p>
+
+            <button class="btn btn--contorno" id="botao-sair" type="button">Sair</button>
+        </header>
+
+        <main class="conteudo">
+            <h1 class="conteudo__titulo">Início</h1>
+            <p class="conteudo__descricao">Os números do sistema e o acesso rápido aos cadastros.</p>
+
+            <!-- CARDS DE RESUMO -->
+            <section class="secao" aria-labelledby="titulo-resumo">
+                <h2 class="secao__titulo" id="titulo-resumo">Resumo</h2>
+
+                <ul class="resumo">
+                    <li class="resumo__card">
+                        <strong class="resumo__numero" id="total-usuarios">0</strong>
+                        <span class="resumo__rotulo">Usuários</span>
+                    </li>
+                    <li class="resumo__card">
+                        <strong class="resumo__numero" id="total-cadastro1">0</strong>
+                        <span class="resumo__rotulo">Cadastro 1</span>
+                    </li>
+                    <li class="resumo__card">
+                        <strong class="resumo__numero" id="total-cadastro2">0</strong>
+                        <span class="resumo__rotulo">Cadastro 2</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ACESSO RÁPIDO -->
+            <section class="secao" aria-labelledby="titulo-atalhos">
+                <h2 class="secao__titulo" id="titulo-atalhos">Acesso rápido</h2>
+
+                <ul class="atalhos">
+                    <li>
+                        <a href="usuarios.html" class="atalho">
+                            <strong class="atalho__titulo">Usuários</strong>
+                            <span class="atalho__texto">Cadastre quem pode entrar no sistema.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cadastro1.html" class="atalho">
+                            <strong class="atalho__titulo">Cadastro 1</strong>
+                            <span class="atalho__texto">Primeiro cadastro sorteado (Sprint 5).</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cadastro2.html" class="atalho">
+                            <strong class="atalho__titulo">Cadastro 2</strong>
+                            <span class="atalho__texto">Segundo cadastro sorteado (Sprint 6).</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
