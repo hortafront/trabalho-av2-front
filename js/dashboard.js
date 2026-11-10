@@ -10,14 +10,14 @@ const totalCadastro2 = document.querySelector('#total-cadastro2');
 
 // 2. Abrir e fechar o menu lateral (celular e tablet)
 function alternarMenu() {
-    const aberto = menu.classList.toggle('menu--aberto');
+    const aberto = menu.classList.toggle('aberto');
 
     botaoMenu.setAttribute('aria-expanded', aberto);
     botaoMenu.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
 }
 
 function fecharMenu() {
-    menu.classList.remove('menu--aberto');
+    menu.classList.remove('aberto');
 
     botaoMenu.setAttribute('aria-expanded', false);
     botaoMenu.setAttribute('aria-label', 'Abrir menu');

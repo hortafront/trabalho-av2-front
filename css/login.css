@@ -1,223 +1,109 @@
-/* =========================================
-   CapacitaRH - Tela de Login (login.css)
-   ========================================= */
+/* Login - CapacitaRH */
 
-/* 1. VARIÁVEIS (identidade visual) */
-:root {
-  --cor-primaria: #6C3CE1;
-  --cor-primaria-escura: #5528C4;
-  --cor-primaria-clara: #EEE8FD;
-  --cor-sucesso: #22C55E;
-  --cor-perigo: #EF4444;
-  --cor-fundo: #F5F6FA;
-  --cor-texto: #1F2937;
-  --cor-texto-suave: #6B7280;
-  --cor-borda: #E5E7EB;
-  --cor-branca: #FFFFFF;
-
-  --fonte: 'Poppins', sans-serif;
-  --raio-botao: 8px;
-  --raio-card: 12px;
-  --sombra: 0 4px 16px rgba(31, 41, 55, 0.08);
-  --sombra-forte: 0 12px 28px rgba(108, 60, 225, 0.20);
-  --transicao: 0.25s ease;
-}
-
-/* 2. RESET */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: var(--fonte);
-  color: var(--cor-texto);
-  background-color: var(--cor-fundo);
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #f4f5f7;
 }
 
-a {
-  color: inherit;
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.cartao {
+  width: 100%;
+  max-width: 350px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.cabecalho {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #1f2c4c;
   text-decoration: none;
 }
 
-/* 3. BOTÕES */
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border: none;
-  border-radius: var(--raio-botao);
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color var(--transicao), transform var(--transicao), box-shadow var(--transicao);
+.logo span {
+  color: #2bb5b5;
 }
 
-.btn:active {
-  transform: scale(0.96);
+.cabecalho h1 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #777;
 }
 
-.btn--primary {
-  background-color: var(--cor-primaria);
-  color: var(--cor-branca);
+.campo {
+  margin-bottom: 15px;
 }
 
-.btn--primary:hover {
-  background-color: var(--cor-primaria-escura);
-}
-
-/* Botão que ocupa toda a largura do formulário */
-.btn--bloco {
+label {
   display: block;
+  margin-bottom: 5px;
+  color: #1f2c4c;
+}
+
+input {
   width: 100%;
+  padding: 10px;
+  border: 1px solid #e2e4e8;
+  border-radius: 6px;
+  background-color: #f4f5f7;
+  font-size: 14px;
 }
 
-/* Contorno visível ao navegar pelo teclado (Tab) */
-:focus-visible {
-  outline: 3px solid var(--cor-primaria);
-  outline-offset: 3px;
+input.erro {
+  border-color: red;
 }
 
-/* 4. PÁGINA E CARTÃO */
-
-/* No celular o cartão ocupa a tela toda, por isso o fundo é branco */
-.login {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--cor-branca);
+.mensagem-erro {
+  margin-bottom: 10px;
+  color: red;
+  font-size: 13px;
 }
 
-.login__cartao {
+.botao {
   width: 100%;
-  padding: 32px 24px;
-  animation: surgir 0.5s ease both;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1f2c4c;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.login__cabecalho {
-  margin-bottom: 32px;
+.botao:hover {
+  background-color: #33446b;
+}
+
+.voltar {
+  margin-top: 15px;
   text-align: center;
 }
 
-.login__logo {
-  display: inline-block;
-  margin-bottom: 8px;
-  font-size: 1.6rem;
-  font-weight: 700;
+.voltar a {
+  color: #777;
 }
 
-.login__logo span {
-  color: var(--cor-primaria);
-}
-
-.login__titulo {
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--cor-texto-suave);
-}
-
-.login__voltar {
-  display: block;
-  width: fit-content;
-  margin: 24px auto 0;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--cor-primaria);
-}
-
-.login__voltar:hover {
-  text-decoration: underline;
-}
-
-/* 5. FORMULÁRIO */
-.form__campo {
-  margin-bottom: 16px;
-}
-
-.form__rotulo {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.form__input {
-  width: 100%;
-  padding: 12px 16px;
-  background-color: var(--cor-branca);
-  border: 1px solid var(--cor-texto-suave);
-  border-radius: var(--raio-botao);
-  font-family: inherit;
-  font-size: 1rem;
-  color: var(--cor-texto);
-  transition: border-color var(--transicao), box-shadow var(--transicao);
-}
-
-/* Campo com o cursor dentro: borda roxa e brilho em volta */
-.form__input:focus {
-  outline: none;
-  border-color: var(--cor-primaria);
-  box-shadow: 0 0 0 3px var(--cor-primaria-clara);
-}
-
-/* Classe colocada pelo JavaScript no campo com problema */
-.form__input--erro,
-.form__input--erro:focus {
-  border-color: var(--cor-perigo);
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
-}
-
-/* min-height guarda o espaço, para o botão não pular quando o erro aparece */
-.form__erro {
-  min-height: 24px;
-  margin-bottom: 16px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--cor-perigo);
-}
-
-/* 6. ANIMAÇÕES */
-@keyframes surgir {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 7. RESPONSIVIDADE (mobile-first) */
-
-/* Tablet e desktop: a partir de 768px o cartão fica centralizado */
-@media (min-width: 768px) {
-  .login {
-    padding: 24px;
-    background-color: var(--cor-fundo);
-  }
-
-  .login__cartao {
-    max-width: 420px;
-    padding: 40px;
-    background-color: var(--cor-branca);
-    border-top: 4px solid var(--cor-primaria);
-    border-radius: var(--raio-card);
-    box-shadow: var(--sombra);
-  }
-}
-
-/* Quem pediu menos movimento no sistema operacional */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-  }
+.voltar a:hover {
+  color: #1f2c4c;
 }

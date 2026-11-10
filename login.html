@@ -5,42 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | CapacitaRH</title>
 
-    <!-- Fonte Poppins (Google Fonts) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- CSS próprio desta página -->
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <main class="login">
-        <section class="login__cartao">
+        <section class="cartao">
 
             <!-- CABEÇALHO DO CARTÃO -->
-            <header class="login__cabecalho">
-                <a href="index.html" class="login__logo">Capacita<span>RH</span></a>
-                <h1 class="login__titulo">Acesse o sistema</h1>
+            <header class="cabecalho">
+                <a href="index.html" class="logo">Capacita<span>RH</span></a>
+                <h1>Acesse o sistema</h1>
             </header>
 
             <!-- FORMULÁRIO -->
-            <form class="form" id="form-login" novalidate>
-                <div class="form__campo">
-                    <label class="form__rotulo" for="campo-login">Login</label>
-                    <input class="form__input" type="text" id="campo-login" autocomplete="username">
+            <form id="form-login" novalidate>
+                <div class="campo">
+                    <label for="campo-login">Login</label>
+                    <input type="text" id="campo-login" autocomplete="username">
                 </div>
 
-                <div class="form__campo">
-                    <label class="form__rotulo" for="campo-senha">Senha</label>
-                    <input class="form__input" type="password" id="campo-senha" autocomplete="current-password">
+                <div class="campo">
+                    <label for="campo-senha">Senha</label>
+                    <input type="password" id="campo-senha" autocomplete="current-password">
                 </div>
 
-                <p class="form__erro" id="mensagem-erro" role="alert"></p>
+                <p class="mensagem-erro" id="mensagem-erro" role="alert"></p>
 
-                <button class="btn btn--primary btn--bloco" type="submit">Entrar</button>
+                <button class="botao" type="submit">Entrar</button>
             </form>
 
-            <a href="index.html" class="login__voltar">&larr; Voltar ao início</a>
+            <p class="voltar"><a href="index.html">&larr; Voltar ao início</a></p>
         </section>
     </main>
 

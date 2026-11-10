@@ -24,7 +24,7 @@ function criarUsuarioInicial() {
 // 3. Mostrar e limpar as mensagens de erro
 function mostrarErro(texto, campo) {
     mensagemErro.textContent = texto;
-    campo.classList.add('form__input--erro');
+    campo.classList.add('erro');
     campo.setAttribute('aria-invalid', true);
     campo.focus();
 }
@@ -32,10 +32,10 @@ function mostrarErro(texto, campo) {
 function limparErro() {
     mensagemErro.textContent = '';
 
-    campoLogin.classList.remove('form__input--erro');
+    campoLogin.classList.remove('erro');
     campoLogin.removeAttribute('aria-invalid');
 
-    campoSenha.classList.remove('form__input--erro');
+    campoSenha.classList.remove('erro');
     campoSenha.removeAttribute('aria-invalid');
 }
 

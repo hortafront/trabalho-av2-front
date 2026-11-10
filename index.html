@@ -4,119 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CapacitaRH | Gestão de Treinamentos</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header__container">
-            <a href="index.html" class="header__logo">Capacita<span>RH</span></a>
+    <header class="cabecalho">
+        <div class="container">
+            <a href="index.html" class="logo">Capacita<span>RH</span></a>
 
-            <button class="header__toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
-                <span class="header__toggle-bar"></span>
-                <span class="header__toggle-bar"></span>
-                <span class="header__toggle-bar"></span>
+            <button class="botao-menu" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <span class="barra"></span>
+                <span class="barra"></span>
+                <span class="barra"></span>
             </button>
 
-            <nav class="header__nav" id="menu">
-                <ul class="header__list">
-                    <li><a href="#funcionalidades" class="header__link">Funcionalidades</a></li>
-                    <li><a href="#para-quem" class="header__link">Para quem</a></li>
-                    <li><a href="login.html" class="btn btn--primary">Entrar</a></li>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a href="#funcionalidades" class="link">Funcionalidades</a></li>
+                    <li><a href="#perfis" class="link">Perfis</a></li>
+                    <li><a href="login.html" class="botao">Entrar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero__container">
-                <div class="hero__texto">
-                    <h1 class="hero__titulo">Os treinamentos da sua empresa, da inscrição ao certificado.</h1>
-                    <p class="hero__subtitulo">O CapacitaRH registra as capacitações, acompanha quem participou e guarda as certificações de cada funcionário em um só lugar.</p>
-                    <a href="login.html" class="btn btn--claro">Acessar o sistema</a>
-                </div>
-                
-                <ol class="trilha" aria-label="Etapas de uma capacitação">
-                    <li class="trilha__etapa">
-                        <strong class="trilha__nome">Inscrição</strong>
-                        <span class="trilha__texto">O gestor aprova a participação do funcionário.</span>
-                    </li>
-                    <li class="trilha__etapa">
-                        <strong class="trilha__nome">Treinamento</strong>
-                        <span class="trilha__texto">O instrutor registra a presença e o desempenho.</span>
-                    </li>
-                    <li class="trilha__etapa">
-                        <strong class="trilha__nome">Certificado</strong>
-                        <span class="trilha__texto">A certificação fica salva no histórico.</span>
-                    </li>
-                </ol>
+        <section class="abertura">
+            <div class="container">
+                <h1>Gestão de Treinamentos</h1>
+                <p>Controle de cursos, inscrições e certificados dos funcionários.</p>
+                <a href="login.html" class="botao">Acessar o sistema</a>
             </div>
         </section>
 
         <section class="secao" id="funcionalidades">
-            <div class="secao__container">
-                <h2 class="secao__titulo">Funcionalidades</h2>
-                <p class="secao__descricao">Tudo o que o RH precisa para planejar e comprovar a capacitação da equipe.</p>
+            <div class="container">
+                <h2>Funcionalidades</h2>
 
-                <div class="cards">
-                    <article class="card">
-                        <h3 class="card__titulo">Treinamentos</h3>
-                        <p class="card__texto">Cadastre cursos, datas e instrutores e acompanhe as inscrições.</p>
-                    </article>
+                <div class="funcionalidades">
+                    <div class="item">
+                        <h3>Treinamentos</h3>
+                        <p>Cadastre cursos, datas e instrutores e acompanhe as inscrições.</p>
+                    </div>
 
-                    <article class="card">
-                        <h3 class="card__titulo">Certificações</h3>
-                        <p class="card__texto">Guarde os certificados de cada funcionário e consulte quando quiser.</p>
-                    </article>
+                    <div class="item">
+                        <h3>Certificações</h3>
+                        <p>Guarde os certificados de cada funcionário e consulte quando quiser.</p>
+                    </div>
 
-                    <article class="card">
-                        <h3 class="card__titulo">Objetivos</h3>
-                        <p class="card__texto">Defina metas de aprendizado por área e veja quem já as cumpriu.</p>
-                    </article>
-                    <article class="card">
-                        <h3 class="card__titulo">Indicadores</h3>
-                        <p class="card__texto">Acompanhe horas de treinamento, participação e aproveitamento.</p>
-                    </article>
+                    <div class="item">
+                        <h3>Objetivos</h3>
+                        <p>Defina metas de aprendizado por área e veja quem já as cumpriu.</p>
+                    </div>
+
+                    <div class="item">
+                        <h3>Indicadores</h3>
+                        <p>Acompanhe horas de treinamento, participação e aproveitamento.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="secao secao--branca" id="para-quem">
-            <div class="secao__container">
-                <h2 class="secao__titulo">Para quem é o sistema</h2>
-                <p class="secao__descricao">Cada pessoa da empresa usa o CapacitaRH de um jeito.</p>
+        <section class="secao" id="como-funciona">
+            <div class="container">
+                <h2>Como funciona</h2>
 
-                <ul class="publico">
-                    <li class="publico__item">
-                        <h3 class="publico__nome">Funcionário</h3>
-                        <p class="publico__papel">Participa dos treinamentos e acompanha as próprias certificações.</p>
+                <ol class="passos">
+                    <li><strong>Inscrição:</strong> o gestor aprova a participação do funcionário.</li>
+                    <li><strong>Treinamento:</strong> o instrutor registra a presença e o desempenho.</li>
+                    <li><strong>Certificado:</strong> a certificação fica salva no histórico.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="secao" id="perfis">
+            <div class="container">
+                <h2>Perfis de acesso</h2>
+
+                <ul class="perfis">
+                    <li>
+                        <h3>Funcionário</h3>
+                        <p>Participa dos treinamentos e acompanha as próprias certificações.</p>
                     </li>
-                    <li class="publico__item">
-                        <h3 class="publico__nome">Gestor direto</h3>
-                        <p class="publico__papel">Aprova as inscrições da equipe e acompanha as metas.</p>
+                    <li>
+                        <h3>Gestor direto</h3>
+                        <p>Aprova as inscrições da equipe e acompanha as metas.</p>
                     </li>
-                    <li class="publico__item">
-                        <h3 class="publico__nome">RH</h3>
-                        <p class="publico__papel">Organiza as trilhas de capacitação e analisa os indicadores.</p>
+                    <li>
+                        <h3>RH</h3>
+                        <p>Organiza as trilhas de capacitação e analisa os indicadores.</p>
                     </li>
-                    <li class="publico__item">
-                        <h3 class="publico__nome">Instrutor</h3>
-                        <p class="publico__papel">Ministra os treinamentos e registra o desempenho da turma.</p>
+                    <li>
+                        <h3>Instrutor</h3>
+                        <p>Ministra os treinamentos e registra o desempenho da turma.</p>
                     </li>
-                    <li class="publico__item">
-                        <h3 class="publico__nome">Administrador</h3>
-                        <p class="publico__papel">Controla os usuários e os cadastros do sistema.</p>
+                    <li>
+                        <h3>Administrador</h3>
+                        <p>Controla os usuários e os cadastros do sistema.</p>
                     </li>
                 </ul>
             </div>
         </section>
     </main>
-    
-    <footer class="footer">
+
+    <footer>
         <p>&copy; <span id="ano">2026</span> CapacitaRH. Projeto da disciplina de Front-End.</p>
     </footer>
 

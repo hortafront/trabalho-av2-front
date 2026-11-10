@@ -5,14 +5,14 @@ const linksMenu = document.querySelectorAll('#menu a');
 
 // 2. Abrir e fechar o menu no celular
 function alternarMenu() {
-    const aberto = menu.classList.toggle('header__nav--aberto');
+    const aberto = menu.classList.toggle('aberto');
 
     botaoMenu.setAttribute('aria-expanded', aberto);
     botaoMenu.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
 }
 
 function fecharMenu() {
-    menu.classList.remove('header__nav--aberto');
+    menu.classList.remove('aberto');
 
     botaoMenu.setAttribute('aria-expanded', false);
     botaoMenu.setAttribute('aria-label', 'Abrir menu');
