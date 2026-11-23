@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoas | CapacitaRH</title>
+
+    <!-- Proteção: sem login, volta para o login antes de mostrar a página -->
+    <script src="js/sessao.js"></script>
+
+    <!-- CSS próprio desta página -->
+    <link rel="stylesheet" href="css/pessoas.css">
+</head>
+<body>
+    <!-- MENU LATERAL -->
+    <aside class="menu" id="menu">
+        <a href="dashboard.html" class="logo">Capacita<span>RH</span></a>
+
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="dashboard.html">Início</a></li>
+                <li><a href="usuarios.html">Usuários</a></li>
+                <li><a href="pessoas.html" class="ativo" aria-current="page">Pessoas</a></li>
+                <li><a href="cadastro2.html">Cadastro 2</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- ÁREA DA DIREITA: barra do topo e conteúdo -->
+    <div class="pagina">
+        <header class="topo">
+            <button class="botao-menu" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <span class="barra"></span>
+                <span class="barra"></span>
+                <span class="barra"></span>
+            </button>
+
+            <p class="ola">Olá, <strong id="nome-usuario">usuário</strong></p>
+
+            <button class="botao-sair" id="botao-sair" type="button">Sair</button>
+        </header>
+
+        <main class="conteudo">
+            <!-- TÍTULO E BOTÃO NOVO -->
+            <div class="cabecalho-pagina">
+                <h1>Pessoas</h1>
+                <button class="botao-novo" id="botao-novo" type="button">+ Nova pessoa</button>
+            </div>
+
+            <!-- PESQUISA -->
+            <div class="pesquisa">
+                <label for="campo-pesquisa">Pesquisar</label>
+                <input type="search" id="campo-pesquisa" placeholder="Nome ou CPF">
+            </div>
+
+            <!-- LISTAGEM -->
+            <section aria-label="Lista de pessoas">
+                <div class="rolagem">
+                    <table class="tabela">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Nascimento</th>
+                                <th>Telefone</th>
+                                <th>Tipo</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpo-tabela">
+                            <!-- As linhas são criadas pelo JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="vazio" id="mensagem-vazia" hidden>Nenhuma pessoa encontrada.</p>
+            </section>
+
+            <!-- JANELA (MODAL) PARA INCLUIR E EDITAR -->
+            <dialog class="janela" id="janela-pessoa" aria-labelledby="titulo-janela">
+                <form id="form-pessoa" novalidate>
+                    <header class="janela-topo">
+                        <h2 id="titulo-janela">Nova pessoa</h2>
+                        <button class="botao-fechar" id="botao-fechar" type="button" aria-label="Fechar">&times;</button>
+                    </header>
+
+                    <div class="campos">
+                        <div class="campo campo-largo">
+                            <label for="campo-nome">Nome</label>
+                            <input type="text" id="campo-nome" maxlength="200" autofocus>
+                        </div>
+
+                        <div class="campo">
+                            <label for="campo-cpf">CPF</label>
+                            <input type="text" id="campo-cpf" maxlength="14" inputmode="numeric" placeholder="000.000.000-00">
+                        </div>
+
+                        <div class="campo">
+                            <label for="campo-nascimento">Nascimento</label>
+                            <input type="date" id="campo-nascimento">
+                        </div>
+
+                        <div class="campo">
+                            <label for="campo-telefone">Telefone</label>
+                            <input type="tel" id="campo-telefone" maxlength="15" placeholder="(00) 00000-0000">
+                        </div>
+
+                        <div class="campo">
+                            <label for="campo-tipo">Tipo de pessoa</label>
+                            <select id="campo-tipo">
+                                <option value="">Selecione</option>
+                                <!-- As outras opções são criadas pelo JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <p class="mensagem-erro" id="mensagem-erro" role="alert"></p>
+
+                    <div class="janela-botoes">
+                        <button class="botao-cancelar" id="botao-cancelar" type="button">Cancelar</button>
+                        <button class="botao-salvar" type="submit">Salvar</button>
+                    </div>
+                </form>
+            </dialog>
+        </main>
+    </div>
+
+    <script src="js/pessoas.js"></script>
+</body>
+</html>

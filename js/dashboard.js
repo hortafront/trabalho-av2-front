@@ -5,7 +5,7 @@ const linksMenu = document.querySelectorAll('#menu a');
 const botaoSair = document.querySelector('#botao-sair');
 const nomeUsuario = document.querySelector('#nome-usuario');
 const totalUsuarios = document.querySelector('#total-usuarios');
-const totalCadastro1 = document.querySelector('#total-cadastro1');
+const totalPessoas = document.querySelector('#total-pessoas');
 const totalCadastro2 = document.querySelector('#total-cadastro2');
 
 // 2. Abrir e fechar o menu lateral (celular e tablet)
@@ -39,7 +39,7 @@ function mostrarDados() {
     nomeUsuario.textContent = usuarioLogado.nome;
 
     totalUsuarios.textContent = contarRegistros('usuarios');
-    totalCadastro1.textContent = contarRegistros('cadastro1');
+    totalPessoas.textContent = contarRegistros('pessoas');
     totalCadastro2.textContent = contarRegistros('cadastro2');
 }
 

@@ -1,0 +1,384 @@
+/* Cadastro de pessoas - CapacitaRH */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* menu lateral (no celular começa escondido) */
+.menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  width: 220px;
+  padding: 25px 15px 25px 0;
+  background-color: #f4f5f7;
+}
+
+.menu.aberto {
+  display: block;
+}
+
+.logo {
+  display: block;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #1f2c4c;
+}
+
+.logo span {
+  color: #2bb5b5;
+}
+
+.menu li a {
+  display: block;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+  color: #777;
+  border-radius: 0 20px 20px 0;
+}
+
+.menu li a:hover {
+  color: #1f2c4c;
+}
+
+.menu li a.ativo {
+  background-color: #b9eff0;
+  color: #1f2c4c;
+  font-weight: bold;
+}
+
+/* barra do topo */
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 60px;
+  padding: 0 20px;
+}
+
+.botao-menu {
+  padding: 5px;
+  background: none;
+  border: none;
+}
+
+.barra {
+  display: block;
+  width: 22px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: #1f2c4c;
+}
+
+.ola {
+  flex: 1;
+}
+
+.botao-sair {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1f2c4c;
+  color: white;
+}
+
+.botao-sair:hover {
+  background-color: #33446b;
+}
+
+/* conteúdo */
+.conteudo {
+  padding: 20px;
+}
+
+.cabecalho-pagina {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cabecalho-pagina h1 {
+  font-size: 24px;
+  color: #1f2c4c;
+}
+
+.botao-novo {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2bb5b5;
+  color: white;
+  font-weight: bold;
+}
+
+.botao-novo:hover {
+  background-color: #239999;
+}
+
+/* pesquisa */
+.pesquisa {
+  margin-bottom: 20px;
+}
+
+.pesquisa label {
+  display: block;
+  margin-bottom: 5px;
+  color: #777;
+  font-size: 12px;
+}
+
+/* campos (pesquisa e formulário) */
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e2e4e8;
+  border-radius: 6px;
+  background-color: #f4f5f7;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2bb5b5;
+  background-color: white;
+}
+
+input.erro,
+select.erro {
+  border-color: red;
+}
+
+/* tabela (no celular rola para o lado) */
+.rolagem {
+  overflow-x: auto;
+}
+
+.tabela {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: collapse;
+}
+
+.tabela th {
+  padding: 12px 15px;
+  background-color: #f4f5f7;
+  color: #777;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.tabela td {
+  padding: 14px 15px;
+  white-space: nowrap;
+}
+
+.tabela tbody tr:nth-child(even) {
+  background-color: #f4f5f7;
+}
+
+.tabela tbody tr:hover {
+  background-color: #e8fafa;
+}
+
+/* botões de cada linha */
+.botao-editar,
+.botao-excluir {
+  margin-right: 5px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.botao-editar {
+  border: 1px solid #1f2c4c;
+  color: #1f2c4c;
+}
+
+.botao-editar:hover {
+  background-color: #1f2c4c;
+  color: white;
+}
+
+.botao-excluir {
+  border: 1px solid red;
+  color: red;
+}
+
+.botao-excluir:hover {
+  background-color: red;
+  color: white;
+}
+
+.botao-excluir:disabled {
+  border-color: #e2e4e8;
+  background-color: white;
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.vazio {
+  padding: 20px;
+  color: #777;
+  text-align: center;
+}
+
+/* janela (modal) */
+.janela {
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  padding: 25px;
+  border: none;
+  border-radius: 8px;
+}
+
+.janela::backdrop {
+  background-color: rgba(31, 44, 76, 0.5);
+}
+
+.janela-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.janela-topo h2 {
+  font-size: 18px;
+  color: #1f2c4c;
+}
+
+.botao-fechar {
+  border: none;
+  background: none;
+  color: #777;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.botao-fechar:hover {
+  color: #1f2c4c;
+}
+
+/* no celular, um campo embaixo do outro */
+.campos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 5px;
+  color: #1f2c4c;
+}
+
+.mensagem-erro {
+  margin-bottom: 10px;
+  color: red;
+  font-size: 13px;
+}
+
+.janela-botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.botao-cancelar,
+.botao-salvar {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+}
+
+.botao-cancelar {
+  background-color: #e2e4e8;
+  color: #333;
+}
+
+.botao-cancelar:hover {
+  background-color: #d0d3d9;
+}
+
+.botao-salvar {
+  background-color: #1f2c4c;
+  color: white;
+}
+
+.botao-salvar:hover {
+  background-color: #33446b;
+}
+
+/* tablet: formulário em duas colunas */
+@media (min-width: 768px) {
+  .campos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campo-largo {
+    grid-column: span 2;
+  }
+}
+
+/* computador: menu sempre aberto do lado esquerdo */
+@media (min-width: 1024px) {
+  .botao-menu {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    top: 0;
+  }
+
+  .pagina {
+    margin-left: 220px;
+  }
+
+  .topo,
+  .conteudo {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .pesquisa {
+    max-width: 350px;
+  }
+}
